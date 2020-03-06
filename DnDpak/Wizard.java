@@ -1,63 +1,66 @@
 package DnDpak;
 
-public class Wizard extends DnDClass {
+public class Wizard implements DnDClass {
+
+    //region features
+    private final String classFeatures = "Spellcasting Ability\n" +
+            "Intelligence is your Spellcasting ability for your Wizard Spells since you learn your Spells through dedicated study and memorization. \n" +
+            "You use your Intelligence whenever a spell refers to your Spellcasting ability. \n" +
+            "In addition you use your Intelligence modifier when Setting the saving throw DC for a Wizard spell you cast and when Making an Attack roll with one.\n" +
+            "Spell save DC = 8 + your Proficiency Bonus + your Intelligence modifier\n" +
+            "Spell Attack modifier = your Proficiency Bonus + your Intelligence modifier\n" +
+            "\n" +
+            "Ritual Casting\n" +
+            "You can cast a Wizard spell as a ritual if that spell has the ritual tag and you have the spell in your Spellbook. \n" +
+            "You don't need to have the spell prepared.\n" +
+            "\n" +
+            "Spellcasting Focus\n" +
+            "You can use an arcane focus as a Spellcasting focus for your Wizard Spells.\n" +
+            "\n" +
+            "Learning Spells of 1st Level and Higher\n" +
+            "Each time you gain a Wizard level you can add two Wizard Spells of your choice to your Spellbook for free. \n" +
+            "Each of these Spells must be of a level for which you have Spell Slots, as shown on the Wizard table. \n" +
+            "On your Adventures you might find other Spells that you can add to your Spellbook.\n" +
+            "\n" +
+            "Arcane Recovery\n" +
+            "You have learned to regain some of your magical energy by studying your Spellbook. \n" +
+            "Once per day when you finish a Short Rest, you can choose expended Spell Slots to recover. \n" +
+            "The Spell Slots can have a combined level that is equal to or less than half your Wizard level (rounded up) \n" +
+            "and none of the slots can be 6th level or higher.\n" +
+            "\n" +
+            "Arcane Tradition\n" +
+            "When you reach 2nd level you choose an arcane tradition, shaping your practice of magic through one of eight schools such as Evocation. \n" +
+            "Your choice grants you features at 2nd level and again at 6th 10th and 14th level.\n" +
+            ",\n" +
+            "Spell Mastery\n" +
+            "At 18th level, you have achieved such mastery over certain Spells that you can cast them at will. \n" +
+            "Choose a 1st-level Wizard spell and a 2nd-level Wizard spell that are in your Spellbook. \n" +
+            "You can cast those Spells at their lowest level without expending a spell slot when you have them prepared. \n" +
+            "If you want to cast either spell at a higher level, you must expend a spell slot as normal.\n" +
+            "By spending 8 hours in study, you can exchange one or both of the Spells you chose for different Spells of the same levels.\n" +
+            ",\n" +
+            "Signature Spells\n" +
+            "When you reach 20th level, you gain mastery over two powerful Spells and can cast them with little effort. \n" +
+            "Choose two 3rd-level Wizard Spells in your Spellbook as your signature Spells. \n" +
+            "You always have these Spells prepared, they don't count against the number of Spells you have prepared \n" +
+            "and you can cast each of them once at 3rd level without expending a spell slot. \n" +
+            "When you do so, you can't do so again until you finish a short or Long Rest.\n" +
+            "If you want to cast either spell at a higher level, you must expend a spell slot as normal.";
+    //endregion
+    private int level;
+    private  String displayClassFeatures;
+
 
     //region constructor
-    public Wizard(String uChosenClass) {
-        super(uChosenClass);
-        super.SetLevel(1);
-        //region Class Features
-        setClassFeatures("Spellcasting Ability\n" +
-                "Intelligence is your Spellcasting ability for your Wizard Spells since you learn your Spells through dedicated study and memorization. \n" +
-                "You use your Intelligence whenever a spell refers to your Spellcasting ability. \n" +
-                "In addition you use your Intelligence modifier when Setting the saving throw DC for a Wizard spell you cast and when Making an Attack roll with one.\n" +
-                "Spell save DC = 8 + your Proficiency Bonus + your Intelligence modifier\n" +
-                "Spell Attack modifier = your Proficiency Bonus + your Intelligence modifier\n" +
-                "\n" +
-                "Ritual Casting\n" +
-                "You can cast a Wizard spell as a ritual if that spell has the ritual tag and you have the spell in your Spellbook. \n" +
-                "You don't need to have the spell prepared.\n" +
-                "\n" +
-                "Spellcasting Focus\n" +
-                "You can use an arcane focus as a Spellcasting focus for your Wizard Spells.\n" +
-                "\n" +
-                "Learning Spells of 1st Level and Higher\n" +
-                "Each time you gain a Wizard level you can add two Wizard Spells of your choice to your Spellbook for free. \n" +
-                "Each of these Spells must be of a level for which you have Spell Slots, as shown on the Wizard table. \n" +
-                "On your Adventures you might find other Spells that you can add to your Spellbook.\n" +
-                "\n" +
-                "Arcane Recovery\n" +
-                "You have learned to regain some of your magical energy by studying your Spellbook. \n" +
-                "Once per day when you finish a Short Rest, you can choose expended Spell Slots to recover. \n" +
-                "The Spell Slots can have a combined level that is equal to or less than half your Wizard level (rounded up) \n" +
-                "and none of the slots can be 6th level or higher.\n" +
-                "\n" +
-                "Arcane Tradition\n" +
-                "When you reach 2nd level you choose an arcane tradition, shaping your practice of magic through one of eight schools such as Evocation. \n" +
-                "Your choice grants you features at 2nd level and again at 6th 10th and 14th level.\n" +
-                ",\n" +
-                "Spell Mastery\n" +
-                "At 18th level, you have achieved such mastery over certain Spells that you can cast them at will. \n" +
-                "Choose a 1st-level Wizard spell and a 2nd-level Wizard spell that are in your Spellbook. \n" +
-                "You can cast those Spells at their lowest level without expending a spell slot when you have them prepared. \n" +
-                "If you want to cast either spell at a higher level, you must expend a spell slot as normal.\n" +
-                "By spending 8 hours in study, you can exchange one or both of the Spells you chose for different Spells of the same levels.\n" +
-                ",\n" +
-                "Signature Spells\n" +
-                "When you reach 20th level, you gain mastery over two powerful Spells and can cast them with little effort. \n" +
-                "Choose two 3rd-level Wizard Spells in your Spellbook as your signature Spells. \n" +
-                "You always have these Spells prepared, they don't count against the number of Spells you have prepared \n" +
-                "and you can cast each of them once at 3rd level without expending a spell slot. \n" +
-                "When you do so, you can't do so again until you finish a short or Long Rest.\n" +
-                "If you want to cast either spell at a higher level, you must expend a spell slot as normal.");
-        //endregion
-        SplitDisplayClass();
-    }//level 1 maker
+    public Wizard() {
+        SetLevel(1);
+        SplitDisplayString();
+    }
     //endregion
 
     //region methods
     @Override
-    public void SplitDisplayClass(){
+    public void SplitDisplayString(){
         String[] dispFeat = getClassFeatures().split(",");
         switch(GetLevel()){
             default:
@@ -72,106 +75,11 @@ public class Wizard extends DnDClass {
         }
     }
 
-    @Override
-    public void SplitDisplayArch(){
-
-        String[] dispArch = getClassArchFeats().split(",");
-
-
-        switch(GetLevel()){
-            case 2:
-                setDispArchString(dispArch[0]);
-                break;
-            case 6:
-                setDispArchString(dispArch[0] + dispArch[1]);
-                break;
-            case 10:
-                setDispArchString(dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3]);
-                break;
-            case 14:
-                setDispArchString(dispArch[0]+dispArch[1] + dispArch[2]+dispArch[3] + dispArch[4]);
-                break;
-        }//switch
-    }//method
 
     @Override
-    public void LevelUp(String arch){
+    public void LevelUp(){
         SetLevel(GetLevel() +1);
-        switch(super.GetLevel()){
-            case 2:
-                //spellSlots[0] = 3;
-                setClassArch(arch);
-                SplitDisplayArch();
-                break;
-            case 3:
-                //spellSlots[0] = 4;
-                //spellSlots[1] = 2;
-                break;
-            case 4:
-                //spellSlots[1] = 4;
-                //abilityScore/feat
-                break;
-            case 5:
-                //spellSlots[2] = 2;
-                //profmod++;
-                break;
-            case 6:
-                //2nd tradition benefit
-                SplitDisplayArch();
-                //spellSlots[2] = 3;
-                break;
-            case 7:
-                //spellSlots[3] = 1;
-                break;
-            case 8:
-                //abilityScore/feat
-               // spellSlots[3] = 2;
-                break;
-            case 9:
-                //spellSlots[3] = 3;
-                //spellSlots[4] = 1;
-            case 10:
-                //3rd tradition benefit
-                SplitDisplayArch();
-                //spellSlots[4] = 2;
-                break;
-            case 11:
-                //spellSlots[5] = 1;
-                break;
-            case 12:
-                //ability score/feat
-                break;
-            case 13:
-                //spellSlots[6] = 1;
-                //profMod++;
-                break;
-            case 14:
-                //third tradition benefit
-                SplitDisplayArch();
-                break;
-            case 15:
-                //spellSlots[7] = 1;
-                break;
-            case 16:
-                //abilityScore / feat
-            case 17:
-                //profMod++;
-                //spellSlots[8] = 1;
-                break;
-            case 18:
-                //spellSlots[4] = 3;
-                //spell mastery class feat
-                break;
-            case 19:
-                //spellSlots[5] = 2;
-                //ability score/feat
-                break;
-            case 20:
-                //spellSlots[6] = 2;
-                //boon?
-                //siginature spell
-                break;
-        }//switch
+        SplitDisplayString();
 
     }//method
     //endregion
@@ -180,89 +88,46 @@ public class Wizard extends DnDClass {
     //gets
     @Override
     public int GetLevel(){
-        return super.GetLevel();
+        return level;
     }
 
     @Override
     public String getClassFeatures() {
-        return super.getClassFeatures();
+        return classFeatures;
     }
 
     @Override
-    public String getClassArch() {
-        return super.getClassArch();
+    public String getDispClassFeats() {
+        return displayClassFeatures;
+    }
+    @Override
+    public String getSubClassFeatures() {
+        return "No SubClass yet;";
     }
 
-    public int GetHD() { return GetHD(); }
-
     @Override
-    public String getDispArchString(){return super.getDispArchString();}
-
+    public String getDisplaySubClassFeatures() {
+        return "No SubClass yet.";
+    }
     //sets
     @Override
-    public void setiHP(int HP) {
-        super.setiHP(HP);
-    }
-
-    @Override
-    public void setDispArchString(String disp){
-        super.setDispArchString(disp);
+    public void setDispClassFeats(String dispClassFeats) {
+        this.displayClassFeatures = dispClassFeats;
     }
 
     @Override
     public void SetLevel(int level){
-        super.SetLevel(level);
+        this.level = level;
     }
 
-    @Override
-    public void setClassFeatures(String classFeatures) {
-        super.setClassFeatures(classFeatures);
-    }
-
-    @Override
+   /* @Override
     public void setClassArch(String Arch){
 
         super.setClassArch(Arch);
 
         switch(Arch){
-            case "necromacy":
-                Arch = "necromancy";
-                //region setClassArchFeats
-                setClassArchFeats("School of Necromancy\n" +
-                        "\n" +
-                        "Necromancy Savant\n" +
-                        "Beginning when you select this school at 2nd level the gold and time you must spend to copy a necromancy spell into your spellbook is halved.\n" +
-                        "\n" +
-                        "Grim Harvest\n" +
-                        "At 2nd level you gain the ability to reap life energy from creatures you kill with your spells. \n" +
-                        "Once per turn when you kill one or more creatures with a spell of 1st level or higher\n" +
-                        "you regain hit points equal to twice the spell’s level\n" +
-                        "or three times its level if the spell belongs to the School of Necromancy. \n" +
-                        "You don’t gain this benefit for killing constructs or undead.\n" +
-                        ",\n" +
-                        "Undead Thralls\n" +
-                        "At 6th level, you add the animate dead spell to your spellbook if it is not there already. \n" +
-                        "When you cast animate dead you can target one additional corpse or pile of bones creating another zombie or skeleton as appropriate.\n" +
-                        "Whenever you create an undead using a necromancy spell, it has additional benefits:\n" +
-                        "The creature’s hit point maximum is increased by an amount equal to your wizard level.\n" +
-                        "The creature adds your proficiency bonus to its weapon damage rolls.\n" +
-                        ",\n" +
-                        "Inured to Undeath\n" +
-                        "Beginning at 10th level you have resistance to necrotic damage and your hit point maximum can't be reduced.\n" +
-                        "You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects.\n" +
-                        ",\n" +
-                        "Command Undead\n" +
-                        "Starting at 14th level you can use magic to bring undead under your control even those created by other wizards.\n" +
-                        "As an action you can choose one undead that you can see within 60 feet of you. \n" +
-                        "That creature must make a Charisma saving throw against your wizard spell save DC. \n" +
-                        "If it succeeds you can’t use this feature on it again. If it fails\n" +
-                        "it becomes friendly to you and obeys your commands until you use this feature again.\n" +
-                        "Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher\n" +
-                        "it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher\n" +
-                        "it can repeat the saving throw at the end of every hour until it succeeds and breaks free.\n");
-                //endregion
-                break;
-            case "divination":
+
+              case "divination":
                 Arch = "divination";
                 //region setClassArchFeats
                 setClassArchFeats("School of Divination\n" +
@@ -885,7 +750,7 @@ public class Wizard extends DnDClass {
         }//switch
 
 
-    }//method
+    }//method*/
 
 
     //endregion
