@@ -31,9 +31,11 @@ public class WizardSubClass extends Wizard {
     }
     @Override
     public String getSubClassFeatures(){
-        return "DO NOT USE WIZARDSUBCLASS.JAVA";
+        if(wiz != null) {
+            return wiz.getSubClassFeatures();
+        }
+        return null;
     }
-    @Override
     public String getDisplaySubClassFeatures() {
         return displaySubClassFeatures;
     }
