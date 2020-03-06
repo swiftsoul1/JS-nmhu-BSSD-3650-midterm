@@ -3,7 +3,8 @@ package DnDpak;
 public class Wizard implements DnDClass {
 
     //region features
-    private final String classFeatures = "Spellcasting Ability\n" +
+    private final String classFeatures = "Class Features: \n\n" +
+            "Spellcasting Ability\n" +
             "Intelligence is your Spellcasting ability for your Wizard Spells since you learn your Spells through dedicated study and memorization. \n" +
             "You use your Intelligence whenever a spell refers to your Spellcasting ability. \n" +
             "In addition you use your Intelligence modifier when Setting the saving throw DC for a Wizard spell you cast and when Making an Attack roll with one.\n" +
@@ -80,7 +81,6 @@ public class Wizard implements DnDClass {
     public void LevelUp(){
         SetLevel(GetLevel() +1);
         SplitDisplayString();
-
     }//method
     //endregion
 
@@ -102,12 +102,12 @@ public class Wizard implements DnDClass {
     }
     @Override
     public String getSubClassFeatures() {
-        return "No SubClass yet;";
+        return "Sub Class Features: \n\n";
     }
 
     @Override
     public String getDisplaySubClassFeatures() {
-        return "No SubClass yet.";
+        return "";
     }
     //sets
     @Override

@@ -3,12 +3,11 @@ package DnDpak;
 public class Necromancy extends WizardSubClass {
     public Necromancy(Wizard wiz) {
         super(wiz);
-        super.SplitDisplayString();
     }
 
     @Override
     public String getSubClassFeatures() {
-        return "School of Necromancy\n" +
+        return super.getSubClassFeatures() +"School of Necromancy\n" +
                 "\n" +
                 "Necromancy Savant\n" +
                 "Beginning when you select this school at 2nd level the gold and time you must spend to copy a necromancy spell into your spellbook is halved.\n" +

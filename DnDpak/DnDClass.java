@@ -1,7 +1,7 @@
 package DnDpak;
 
 
-interface DnDClass {
+public interface DnDClass {
 
 
     //region abstract methods
