@@ -3,9 +3,10 @@ package DnDpak;
 
 public interface DnDClass {
 
-
     //region abstract methods
     abstract public void LevelUp();
+
+    abstract public String getSubClassFeatures();
 
     abstract public void SplitDisplayString();
     //endregion
@@ -17,8 +18,6 @@ public interface DnDClass {
     abstract public String getClassFeatures();
 
     abstract public String getDispClassFeats();
-
-    abstract public String getSubClassFeatures();
 
     abstract public String getDisplaySubClassFeatures();
     //sets

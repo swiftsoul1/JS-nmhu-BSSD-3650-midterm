@@ -1,21 +1,22 @@
 package DnDpak;
 
-public class WizardSubClass extends Wizard {
+public class FighterSubClass extends Fighter {
 
     //region properties
-    private DnDClass wizard;//self ref
+    private DnDClass fighter;
     private String displaySubClassFeatures;
     //endregion
 
-    //region constructor(s)
-    public WizardSubClass(DnDClass wiz) {
-        super(wiz.GetLevel());
-        wizard = wiz;
+    //region constructor
+    public FighterSubClass(DnDClass fighter){
+        super(fighter.GetLevel());
+        this.fighter = fighter;
         SplitDisplayString();
     }
     //endregion
 
     //region methods
+
     @Override
     public void SplitDisplayString() {
         //call super
@@ -24,28 +25,32 @@ public class WizardSubClass extends Wizard {
         //all SubClasses get their abilities on the same levelpath
         String[] dispArch = getSubClassFeatures().split(",");
         switch (GetLevel()) {
-            case 2:
+            case 3:
                 displaySubClassFeatures = dispArch[0];
                 break;
-            case 6:
+            case 7:
                 displaySubClassFeatures = dispArch[0] + dispArch[1];
                 break;
             case 10:
-                displaySubClassFeatures= dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
                 break;
-            case 14:
+            case 15:
                 displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
                 break;
-        }//switch
+            case 18:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                break;
+        }
     }
     @Override
-    public String getSubClassFeatures(){
-        return wiz.getSubClassFeatures();
+    public String getSubClassFeatures() {
+        return fighter.getSubClassFeatures();
     }
+
     @Override
     public String getDisplaySubClassFeatures() {
         return displaySubClassFeatures;
     }
     //endregion
 
-}//class
+}

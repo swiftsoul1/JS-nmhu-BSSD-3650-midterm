@@ -1,16 +1,15 @@
 package DnDpak;
 
-public class WizardSubClass extends Wizard {
-
+public class ClericSubClass extends  Cleric {
     //region properties
-    private DnDClass wizard;//self ref
+    private DnDClass cleric;
     private String displaySubClassFeatures;
     //endregion
 
-    //region constructor(s)
-    public WizardSubClass(DnDClass wiz) {
-        super(wiz.GetLevel());
-        wizard = wiz;
+    //region constructor
+    public ClericSubClass(DnDClass cleric){
+        super(cleric.GetLevel());
+        this.cleric = cleric;
         SplitDisplayString();
     }
     //endregion
@@ -24,23 +23,26 @@ public class WizardSubClass extends Wizard {
         //all SubClasses get their abilities on the same levelpath
         String[] dispArch = getSubClassFeatures().split(",");
         switch (GetLevel()) {
-            case 2:
+            default:
                 displaySubClassFeatures = dispArch[0];
                 break;
-            case 6:
+            case 2:
                 displaySubClassFeatures = dispArch[0] + dispArch[1];
                 break;
-            case 10:
-                displaySubClassFeatures= dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
                 break;
-            case 14:
+            case 8:
                 displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
                 break;
-        }//switch
+            case 17:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                break;
+        }
     }
     @Override
-    public String getSubClassFeatures(){
-        return wiz.getSubClassFeatures();
+    public String getSubClassFeatures() {
+        return cleric.getSubClassFeatures();
     }
     @Override
     public String getDisplaySubClassFeatures() {
@@ -48,4 +50,4 @@ public class WizardSubClass extends Wizard {
     }
     //endregion
 
-}//class
+}
