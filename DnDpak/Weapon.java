@@ -12,11 +12,11 @@ public class Weapon implements InventoryItem {
     }
 
     @Override
-    public void use() {
-        swing();
+    public String use() {
+        return swing();
     }
 
-    public void swing(){
-        System.out.println("You swing your " + name + " for " + dieAmount+"d"+dieType);
+    public String swing(){
+        return ("You swing your " + name + " for " + dieAmount+"d"+dieType);
     }
 }

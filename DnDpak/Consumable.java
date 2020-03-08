@@ -11,13 +11,18 @@ public class Consumable implements InventoryItem {
     }
 
     @Override
-    public void use() {
+    public String use() {
+        String outStr ="";
         if(uses >= 1) {
-            System.out.println("You use the " + name + " and it " + useAction);
+            outStr = "You use the " + name + " and it " + useAction;
             uses--;
+            if(uses == 0){
+                outStr += "The item was used up.";
+            }
         }
         if(uses == 0){
-            System.out.println("The item was used up.");
+            outStr =  "The item was used up.";
         }
+        return outStr;
     }
 }

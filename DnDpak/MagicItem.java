@@ -10,7 +10,7 @@ public class MagicItem implements InventoryItem {
     }
 
     @Override
-    public void use() {
-        System.out.println("You use your " + name + " and it " + useAction);
+    public String use() {
+        return ("You use your " + name + " and it " + useAction);
     }
 }

@@ -40,7 +40,7 @@ public class WizardSubClass extends Wizard {
     }
     @Override
     public String getSubClassFeatures(){
-        return wiz.getSubClassFeatures();
+        return wizard.getSubClassFeatures();
     }
     @Override
     public String getDisplaySubClassFeatures() {
