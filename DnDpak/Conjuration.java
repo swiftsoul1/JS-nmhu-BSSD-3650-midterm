@@ -2,10 +2,13 @@ package DnDpak;
 
 public class Conjuration extends WizardSubClass {
 
+    public String displaySubClassFeatures;
+
     //region constructor
     public Conjuration(DnDClass wiz) {
         //call super
         super(wiz);
+        SplitDisplayString();
     }
     //endregion
 
@@ -40,6 +43,38 @@ public class Conjuration extends WizardSubClass {
                 "Durable Summons\n" +
                 "Starting at 14th level any creature that you summon or create with a conjuration spell has 30 temporary hit points.");
     }
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            case 2:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 10:
+                displaySubClassFeatures= dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 14:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+        }//switch
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
+    }
+
     //endregion
 }
 

@@ -1,9 +1,12 @@
 package DnDpak;
 
 public class LifeDomain extends ClericSubClass {
+    private String displaySubClassFeatures;
+
     //region constructor
     public LifeDomain(DnDClass cleric) {
         super(cleric);
+        SplitDisplayString();
     }
     //endregion
 
@@ -41,6 +44,41 @@ public class LifeDomain extends ClericSubClass {
                 "Supreme Healing\n" +
                 "Starting at 17th level when you would normally roll one or more dice to Restore Hit Points with a spell you instead use the highest number possible for each die. " +
                 "For example instead of restoring 2d6 Hit Points to a creature you restore 12.";
+    }
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        //all SubClasses get their abilities on the same levelpath
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            default:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 2:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 8:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+            case 17:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                break;
+        }
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
     //endregion
 }

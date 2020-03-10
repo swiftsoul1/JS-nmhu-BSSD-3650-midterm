@@ -1,9 +1,12 @@
 package DnDpak;
 
 public class DeathDomain extends ClericSubClass {
+
+    private String displaySubClassFeatures;
     //region constructor
     public DeathDomain(DnDClass cleric) {
         super(cleric);
+        SplitDisplayString();
     }
     //endregion
 
@@ -41,6 +44,42 @@ public class DeathDomain extends ClericSubClass {
                 "Improved Reaper\n" +
                 "Starting at 17th level when you cast a necromancy spell of 1st through 5th level that targets only one creature " +
                 "the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components you must provide them for each target.\n";
+    }
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        //all SubClasses get their abilities on the same levelpath
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            default:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 2:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 8:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+            case 17:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                break;
+        }
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
     //endregion
 }

@@ -2,10 +2,13 @@ package DnDpak;
 
 public class Evocation extends WizardSubClass {
 
+    private String displaySubClassFeatures;
+
     //region constructor
     public Evocation(DnDClass wiz) {
         //call super
         super(wiz);
+        SplitDisplayString();
     }
     //endregion
 
@@ -37,6 +40,39 @@ public class Evocation extends WizardSubClass {
                 "The first time you do so you suffer no adverse effect. If you use this feature again before you finish a Long Rest you take 2d12 necrotic damage for each level of the spell" +
                 "immediately after you cast it. Each time you use this feature again before finishing a Long Rest " +
                 "the necrotic damage per Spell Level increases by 1d12. This damage ignores Resistance and immunity.");
+    }
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        //all SubClasses get their abilities on the same levelpath
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            case 2:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 10:
+                displaySubClassFeatures= dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 14:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+        }//switch
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
     //endregion
 }

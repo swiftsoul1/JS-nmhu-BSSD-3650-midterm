@@ -2,8 +2,8 @@ package DnDpak;
 
 import java.util.*;
 
-public class Character {
-    
+public class DnDCharacter {
+
     //region properties
     private String name;
     private int allLevels;
@@ -12,7 +12,7 @@ public class Character {
     //endregion
 
     //region constructor
-    public Character(String name, DnDClass first) {
+    public DnDCharacter(String name, DnDClass first) {
         this.name = name;
         allLevels = 0;
         mClasses = new ArrayList<DnDClass>();
@@ -22,12 +22,14 @@ public class Character {
     //endregion
 
     //region methods
-    public String useItem(int i) {
+    public String UseItem(int i) {
         return items.get(i).use();
     }
-    public  void dropItem(int i){
+    public  void DropItem(int i){
         items.remove(i);
     }
+
+    public void AddItem(InventoryItem item){items.add(item);}
 
     //multiclassing
     public void LevelUp(DnDClass ddc){
@@ -36,6 +38,9 @@ public class Character {
     //level existing class
     public void LevelUp(int i){
         mClasses.get(i).LevelUp();
+    }
+    public DnDClass GetClass(int i){
+        return mClasses.get(i);
     }
 
     //private methods

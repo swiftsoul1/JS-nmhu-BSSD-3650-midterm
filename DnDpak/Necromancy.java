@@ -2,10 +2,12 @@ package DnDpak;
 
 public class Necromancy extends WizardSubClass {
 
+    private String displaySubClassFeatures = "";
     //region constructor
     public Necromancy(DnDClass wiz) {
         //call super
         super(wiz);
+        SplitDisplayString();
     }
     //endregion
 
@@ -44,6 +46,40 @@ public class Necromancy extends WizardSubClass {
                 "Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher " +
                 "it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher " +
                 "it can repeat the saving throw at the end of every hour until it succeeds and breaks free.\n";
+    }
+
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        //all SubClasses get their abilities on the same levelpath
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            case 2:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 6:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 10:
+                displaySubClassFeatures= dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 14:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+        }//switch
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
     //endregion
 }

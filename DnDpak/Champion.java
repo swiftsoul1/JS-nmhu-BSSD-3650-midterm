@@ -2,6 +2,8 @@ package DnDpak;
 
 public class Champion extends FighterSubClass {
 
+    private String displaySubClassFeatures;
+
     //region constructor
     public Champion(DnDClass fighter) {
         super(fighter);
@@ -31,4 +33,40 @@ public class Champion extends FighterSubClass {
                 "You don’t gain this benefit if you have 0 Hit Points.";
     }
     //endregion
+    @Override
+    public void SplitDisplayString() {
+        //call super
+        super.SplitDisplayString();
+        //split up current abilities from all abilities
+        //all SubClasses get their abilities on the same levelpath
+        String[] dispArch = getSubClassFeatures().split(",");
+        switch (GetLevel()) {
+            case 3:
+                displaySubClassFeatures = dispArch[0];
+                break;
+            case 7:
+                displaySubClassFeatures = dispArch[0] + dispArch[1];
+                break;
+            case 10:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                break;
+            case 15:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                break;
+            case 18:
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                break;
+        }
+    }
+
+    @Override
+    public void LevelUp() {
+        super.LevelUp();
+        SplitDisplayString();
+    }
+
+    @Override
+    public String getDisplaySubClassFeatures() {
+        return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
+    }
 }
