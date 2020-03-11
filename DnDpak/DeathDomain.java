@@ -54,20 +54,20 @@ public class DeathDomain extends ClericSubClass {
         //all SubClasses get their abilities on the same levelpath
         String[] dispArch = getSubClassFeatures().split(",");
         switch (GetLevel()) {
-            default:
+            case 1:
                 displaySubClassFeatures = dispArch[0];
                 break;
             case 2:
                 displaySubClassFeatures = dispArch[0] + dispArch[1];
                 break;
             case 6:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] +  dispArch[2];
                 break;
             case 8:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] +  dispArch[3];
                 break;
             case 17:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
                 break;
         }
     }

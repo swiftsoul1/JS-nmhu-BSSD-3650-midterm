@@ -16,6 +16,11 @@ public class Weapon implements InventoryItem {
         return swing();
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     public String swing(){
         return ("You swing your " + name + " for " + dieAmount+"d"+dieType);
     }

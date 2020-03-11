@@ -37,6 +37,7 @@ public class WizardSubClass extends Wizard {
     @Override
     public void LevelUp() {
         wizard.LevelUp();
+        SetLevel(GetLevel()+1);
     }
 
     @Override

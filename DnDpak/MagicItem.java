@@ -8,6 +8,10 @@ public class MagicItem implements InventoryItem {
         this.name = name;
         this.useAction = useAction;
     }
+    @Override
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String use() {

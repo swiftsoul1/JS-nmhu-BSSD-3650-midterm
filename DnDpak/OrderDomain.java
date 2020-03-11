@@ -62,7 +62,7 @@ public class OrderDomain extends ClericSubClass {
         //all SubClasses get their abilities on the same levelpath
         String[] dispArch = getSubClassFeatures().split(",");
         switch (GetLevel()) {
-            default:
+            case 1:
                 displaySubClassFeatures = dispArch[0];
                 break;
             case 2:

@@ -67,7 +67,7 @@ public class Cleric implements DnDClass {
     public void SplitDisplayString() {
         String[] dispFeat = getClassFeatures().split(",");
         switch(GetLevel()){
-            default:
+            case 1:
                 setDispClassFeats(dispFeat[0]);
                 break;
             case 2:

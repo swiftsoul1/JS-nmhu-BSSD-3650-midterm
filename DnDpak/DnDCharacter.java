@@ -41,16 +41,24 @@ public class DnDCharacter {
         this.name = name;
     }
 
+    public List<InventoryItem> getItems() {
+        return items;
+    }
+
     public void AddItem(InventoryItem item){items.add(item);}
 
     //multiclassing
     public void LevelUp(DnDClass ddc){
-        AddDnDClass(ddc);
+        if(allLevels < 20) {
+            AddDnDClass(ddc);
+        }
     }
     //level existing class
     public void LevelUp(int i){
+        if (allLevels < 20){
         mClasses.get(i).LevelUp();
         SetAllLevels();
+        }
     }
     public DnDClass GetClass(int i){
         if(i < mClasses.size()) {
@@ -69,6 +77,10 @@ public class DnDCharacter {
         for (DnDClass mc : mClasses) {
             allLevels += mc.GetLevel();
         }
+    }
+
+    public List<DnDClass> getmClasses() {
+        return mClasses;
     }
     //endregion
 }

@@ -74,7 +74,7 @@ public class Wizard implements DnDClass {
 
         String[] dispFeat = getClassFeatures().split(",");
         switch(GetLevel()){
-            default:
+            case 1:
                 setDispClassFeats(dispFeat[0]);
                 break;
             case 18:

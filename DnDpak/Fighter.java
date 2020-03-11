@@ -57,7 +57,7 @@ public class Fighter implements DnDClass {
     //region methods
     @Override
     public void LevelUp() {
-        SetLevel(GetLevel() +1);
+        SetLevel(level+1);
         SplitDisplayString();
     }
 
@@ -67,7 +67,7 @@ public class Fighter implements DnDClass {
     public void SplitDisplayString() {
         String[] dispFeat = getClassFeatures().split(",");
         switch(GetLevel()){
-            default:
+            case 1:
                 setDispClassFeats(dispFeat[0]);
                 break;
             case 2:

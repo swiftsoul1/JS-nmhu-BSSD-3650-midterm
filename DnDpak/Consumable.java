@@ -25,4 +25,9 @@ public class Consumable implements InventoryItem {
         }
         return outStr;
     }
+    @Override
+    public String getName() {
+        return name;
+    }
+
 }

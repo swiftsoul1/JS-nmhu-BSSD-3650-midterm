@@ -36,6 +36,7 @@ public class ClericSubClass extends  Cleric {
     @Override
     public void LevelUp() {
         cleric.LevelUp();
+        SetLevel(GetLevel()+1);
     }
 
     @Override

@@ -62,13 +62,13 @@ public class Knight extends FighterSubClass {
                 displaySubClassFeatures = dispArch[0] + dispArch[1];
                 break;
             case 10:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] ;
                 break;
             case 15:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3];
                 break;
             case 18:
-                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4] + dispArch[5];
+                displaySubClassFeatures = dispArch[0] + dispArch[1] + dispArch[2] + dispArch[3] + dispArch[4];
                 break;
         }
     }

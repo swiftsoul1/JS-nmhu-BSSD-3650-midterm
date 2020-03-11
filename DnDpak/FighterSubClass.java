@@ -29,6 +29,7 @@ public class FighterSubClass extends Fighter {
     @Override
     public void LevelUp() {
         fighter.LevelUp();
+        SetLevel(GetLevel()+1);
     }
 
     @Override
