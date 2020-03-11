@@ -29,6 +29,14 @@ public class DnDCharacter {
         items.remove(i);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void AddItem(InventoryItem item){items.add(item);}
 
     //multiclassing

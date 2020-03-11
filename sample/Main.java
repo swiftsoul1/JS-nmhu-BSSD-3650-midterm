@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent start = FXMLLoader.load(getClass().getResource("sample.fxml"));
         window = primaryStage;
-        window.setTitle("Character Sheet 5E");
+        window.setTitle("Create New Character");
         window.setScene(new Scene(start, 1050, 765));
         window.show();
 

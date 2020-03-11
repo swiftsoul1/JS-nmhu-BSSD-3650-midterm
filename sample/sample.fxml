@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:controller="sample.SampleController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1043.0"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
-
-    
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SampleController">
+   <children>
+      <Label layoutX="78.0" layoutY="143.0" prefHeight="17.0" prefWidth="181.0" text="Select your starting class" />
+      <RadioButton id="wizRBtn" fx:id="wizRBtn" layoutX="93.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleClassTGroup" text="Wizard">
+         <toggleGroup>
+            <ToggleGroup fx:id="DnDClassToggle" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="fighterRBtn" fx:id="fighterRBtn" layoutX="247.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleClassTGroup" text="Fighter" toggleGroup="$DnDClassToggle" />
+      <RadioButton id="clericRBtn" fx:id="clericRBtn" layoutX="396.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleClassTGroup" text="Cleric" toggleGroup="$DnDClassToggle" />
+      <Label layoutX="76.0" layoutY="224.0" text="Select a sub class" />
+      <RadioButton id="necroRBtn" fx:id="necroRBtn" layoutX="95.0" layoutY="261.0" mnemonicParsing="false" text="Necromancy">
+         <toggleGroup>
+            <ToggleGroup fx:id="WizSubGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="exocatRBtn" fx:id="evocatRBtn" layoutX="95.0" layoutY="297.0" mnemonicParsing="false" text="Evocation" toggleGroup="$WizSubGroup" />
+      <RadioButton id="conjureRBtn" fx:id="conjureRBtn" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" text="Conjuration" toggleGroup="$WizSubGroup" />
+      <RadioButton id="champRBtn" fx:id="champRBtn" layoutX="248.0" layoutY="261.0" mnemonicParsing="false" text="Champion">
+         <toggleGroup>
+            <ToggleGroup fx:id="FighterSubGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="samRBtn" fx:id="samRBtn" layoutX="248.0" layoutY="297.0" mnemonicParsing="false" text="Samurai" toggleGroup="$FighterSubGroup" />
+      <RadioButton id="niteRBtn" fx:id="niteRBtn" layoutX="248.0" layoutY="334.0" mnemonicParsing="false" text="Knight" toggleGroup="$FighterSubGroup" />
+      <RadioButton id="lifeRBtn" fx:id="lifeRBtn" layoutX="396.0" layoutY="261.0" mnemonicParsing="false" text="Life Domain">
+         <toggleGroup>
+            <ToggleGroup fx:id="ClericSubGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="deathRBtn" fx:id="deathRBtn" layoutX="396.0" layoutY="297.0" mnemonicParsing="false" text="Death Domain" toggleGroup="$ClericSubGroup" />
+      <RadioButton id="orderRBtn" fx:id="orderRBtn" layoutX="396.0" layoutY="334.0" mnemonicParsing="false" text="Order Domain" toggleGroup="$ClericSubGroup" />
+      <Label layoutX="79.0" layoutY="60.0" text="Name" />
+      <TextField id="NameTxb" fx:id="nameTxb" layoutX="79.0" layoutY="86.0" promptText="Character Name" />
+      <Button id="submitBtn" fx:id="CreateBtn" layoutX="96.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleCreateButtonAction" text="Create" />
+   </children>
 </AnchorPane>
