@@ -49,6 +49,7 @@ public class Wizard implements DnDClass {
             "When you do so, you can't do so again until you finish a short or Long Rest.\n" +
             "If you want to cast either spell at a higher level, you must expend a spell slot as normal.";
     //endregion
+    private final String ImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\wizard.png";
     private int level;
     private  String displayClassFeatures;
     //endregion
@@ -127,6 +128,15 @@ public class Wizard implements DnDClass {
         this.level = level;
     }
 
+    @Override
+    public String getImgUrl() {
+        return ImgUrl;
+    }
+
+    @Override
+    public String getSubImgUrl() {
+        return "";
+    }
     //endregion
 
 }//class

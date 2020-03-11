@@ -3,6 +3,7 @@ package DnDpak;
 public class OrderDomain extends ClericSubClass {
 
     private String displaySubClassFeatures;
+    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\order.png";
 
     //region constructor
     public OrderDomain(DnDClass cleric) {
@@ -88,6 +89,9 @@ public class OrderDomain extends ClericSubClass {
     @Override
     public String getDisplaySubClassFeatures() {
         return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
+    }
+    public  String getSubImgUrl(){
+        return SubImgUrl;
     }
     //endregion
 }

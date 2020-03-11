@@ -2,7 +2,8 @@ package DnDpak;
 
 public class Necromancy extends WizardSubClass {
 
-    private String displaySubClassFeatures = "";
+    private String displaySubClassFeatures;
+    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\necromancy.png";
     //region constructor
     public Necromancy(DnDClass wiz) {
         //call super
@@ -81,5 +82,6 @@ public class Necromancy extends WizardSubClass {
     public String getDisplaySubClassFeatures() {
         return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
+    public  String getSubImgUrl(){return SubImgUrl;}
     //endregion
 }

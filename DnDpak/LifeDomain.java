@@ -2,6 +2,7 @@ package DnDpak;
 
 public class LifeDomain extends ClericSubClass {
     private String displaySubClassFeatures;
+    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\life.png";
 
     //region constructor
     public LifeDomain(DnDClass cleric) {
@@ -79,6 +80,10 @@ public class LifeDomain extends ClericSubClass {
     @Override
     public String getDisplaySubClassFeatures() {
         return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
+    }
+
+    public String getSubImgUrl() {
+        return SubImgUrl;
     }
     //endregion
 }

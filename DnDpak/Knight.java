@@ -3,6 +3,7 @@ package DnDpak;
 public class Knight extends FighterSubClass {
 
     private String displaySubClassFeatures;
+    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\knight.png";
 
     //region constructor
     public Knight(DnDClass fighter) {
@@ -82,5 +83,6 @@ public class Knight extends FighterSubClass {
     public String getDisplaySubClassFeatures() {
         return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
+    public String getSubImgUrl(){return SubImgUrl;}
     //endregion
 }

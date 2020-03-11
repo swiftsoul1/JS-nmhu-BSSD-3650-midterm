@@ -9,6 +9,10 @@ public interface DnDClass {
     abstract public String getSubClassFeatures();
 
     abstract public void SplitDisplayString();
+
+    abstract String getImgUrl();
+
+    abstract String getSubImgUrl();
     //endregion
 
     //region accessors

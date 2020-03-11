@@ -3,6 +3,7 @@ package DnDpak;
 public class Conjuration extends WizardSubClass {
 
     public String displaySubClassFeatures;
+    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\conjuration.png";
 
     //region constructor
     public Conjuration(DnDClass wiz) {
@@ -74,7 +75,7 @@ public class Conjuration extends WizardSubClass {
     public String getDisplaySubClassFeatures() {
         return super.getDisplaySubClassFeatures() + displaySubClassFeatures;
     }
-
+    public String getSubImgUrl(){return SubImgUrl;}
     //endregion
 }
 

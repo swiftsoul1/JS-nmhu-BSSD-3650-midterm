@@ -37,6 +37,7 @@ public class Fighter implements DnDClass {
             "Beginning at 9th level you can reroll a saving throw that you fail. If you do so you must use the new roll and you can't use this feature again until you finish a Long Rest.\n" +
             "You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.";
     //endregion
+    private final String ImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\fighter.png";
     private int level;
     private String displayClassFeatures;
     //endregion
@@ -115,6 +116,13 @@ public class Fighter implements DnDClass {
     @Override
     public void SetLevel(int level) {
         this.level = level;
+    }
+    @Override
+    public String getImgUrl(){return ImgUrl;}
+
+    @Override
+    public String getSubImgUrl() {
+        return "";
     }
     //endregion
 }
