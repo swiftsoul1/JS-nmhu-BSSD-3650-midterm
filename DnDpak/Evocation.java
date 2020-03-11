@@ -3,7 +3,7 @@ package DnDpak;
 public class Evocation extends WizardSubClass {
 
     private String displaySubClassFeatures;
-    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\evocation.png";
+    private final String SubImgUrl = "C:\\Users\\Jonah\\Desktop\\Patterns-nmhu\\midterm\\JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\evocation.png";
 
     //region constructor
     public Evocation(DnDClass wiz) {

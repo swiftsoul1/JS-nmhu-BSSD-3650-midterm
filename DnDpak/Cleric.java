@@ -39,7 +39,8 @@ public class Cleric implements DnDClass {
             "If your deity intervenes you can't use this feature again for 7 days. Otherwise you can use it again after you finish a Long Rest. " +
             "At 20th level your call for intervention succeeds automatically no roll required.";
     //endregion
-    private final String ImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\cleric.png";
+    private final String ImgUrl = "C:\\Users\\Jonah\\Desktop\\Patterns-nmhu\\midterm\\JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\cleric.png";
+    private final String name = "Cleric";
     private int level;
     private String displayClassFeatures;
     //endregion
@@ -123,6 +124,11 @@ public class Cleric implements DnDClass {
     @Override
     public String getSubImgUrl() {
         return "";
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
     //endregion
 }

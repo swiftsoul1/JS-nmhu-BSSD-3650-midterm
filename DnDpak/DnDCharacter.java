@@ -29,6 +29,10 @@ public class DnDCharacter {
         items.remove(i);
     }
 
+    public int getAllLevels() {
+        return allLevels;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,9 +50,13 @@ public class DnDCharacter {
     //level existing class
     public void LevelUp(int i){
         mClasses.get(i).LevelUp();
+        SetAllLevels();
     }
     public DnDClass GetClass(int i){
-        return mClasses.get(i);
+        if(i < mClasses.size()) {
+            return mClasses.get(i);
+        }
+        return null;
     }
 
     //private methods
@@ -56,9 +64,9 @@ public class DnDCharacter {
         mClasses.add(ddc);
         SetAllLevels();
     }
-    private void SetAllLevels(){
+    private void SetAllLevels() {
         allLevels = 0;
-        for (DnDClass mc:mClasses) {
+        for (DnDClass mc : mClasses) {
             allLevels += mc.GetLevel();
         }
     }

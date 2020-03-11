@@ -19,6 +19,16 @@ public class WizardSubClass extends Wizard {
         //call super
         wizard.SplitDisplayString();
     }
+
+    @Override
+    public String getClassFeatures() {
+        return wizard.getClassFeatures();
+    }
+
+    @Override
+    public String getDispClassFeats() {
+        return wizard.getDispClassFeats();
+    }
     @Override
     public String getSubClassFeatures(){
         return wizard.getSubClassFeatures();

@@ -14,6 +14,18 @@ public class FighterSubClass extends Fighter {
     //endregion
 
     //region methods
+
+
+    @Override
+    public String getClassFeatures() {
+        return fighter.getClassFeatures();
+    }
+
+    @Override
+    public String getDispClassFeats() {
+        return fighter.getDispClassFeats();
+    }
+
     @Override
     public void LevelUp() {
         fighter.LevelUp();

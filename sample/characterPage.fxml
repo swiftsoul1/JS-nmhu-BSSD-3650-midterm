@@ -6,43 +6,42 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="867.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CharacterPageController">
    <children>
       <Label layoutX="48.0" layoutY="44.0" text="Name:" />
       <Label fx:id="nameLbl" layoutX="97.0" layoutY="44.0" text="(Name)" />
-      <Label layoutX="50.0" layoutY="83.0" text="Class one:" />
+      <Label fx:id="classOneDispLbl" layoutX="50.0" layoutY="83.0" text="Class one:" />
       <Label fx:id="classOneLbl" layoutX="117.0" layoutY="83.0" text="(Class 1)" />
-      <Label layoutX="65.0" layoutY="107.0" text="Class Features:" />
+      <Label fx:id="ftsOneDispLbl" layoutX="65.0" layoutY="107.0" text="Class Features:" />
       <TextArea fx:id="classOneFtsArea" editable="false" layoutX="193.0" layoutY="116.0" prefHeight="194.0" prefWidth="221.0" />
-      <Label layoutX="67.0" layoutY="326.0" text="Sub Class Features:" />
+      <Label fx:id="ftsOneSubDispLbl" layoutX="67.0" layoutY="326.0" text="Sub Class Features:" />
       <TextArea fx:id="classOneSubFtsArea" editable="false" layoutX="193.0" layoutY="326.0" prefHeight="194.0" prefWidth="221.0" />
       <ImageView fx:id="classOneImgVw" fitHeight="131.0" fitWidth="101.0" layoutX="90.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="classOneSubImgVw" fitHeight="131.0" fitWidth="101.0" layoutX="90.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="39.0" layoutY="579.0" text="Inventory:" />
-      <Label layoutX="433.0" layoutY="83.0" text="Class two:" />
+      <Label fx:id="classTwoDispLbl" layoutX="433.0" layoutY="83.0" text="Class two:" />
       <Label fx:id="classTwoLbl" layoutX="500.0" layoutY="83.0" text="(Class 2)" />
-      <Label layoutX="446.0" layoutY="108.0" text="Class Features:" />
-      <Label layoutX="457.0" layoutY="326.0" text="Sub Class Features:" />
+      <Label fx:id="ftsTwoDispLbl" layoutX="446.0" layoutY="108.0" text="Class Features:" />
+      <Label fx:id="ftsTwoSubDispLbl" layoutX="457.0" layoutY="326.0" text="Sub Class Features:" />
       <TextArea fx:id="classTwoFtsArea" editable="false" layoutX="583.0" layoutY="116.0" prefHeight="194.0" prefWidth="221.0" />
       <TextArea fx:id="classTwoSubFtsArea" editable="false" layoutX="583.0" layoutY="326.0" prefHeight="209.0" prefWidth="221.0" />
       <ImageView fx:id="classTwoImgVw" fitHeight="150.0" fitWidth="101.0" layoutX="475.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="classTwoSubImgVw" fitHeight="150.0" fitWidth="101.0" layoutX="474.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="831.0" layoutY="83.0" text="Class Three:" />
+      <Label fx:id="classThreeDispLbl" layoutX="831.0" layoutY="83.0" text="Class Three:" />
       <Label layoutX="168.0" layoutY="44.0" text="Total Level:" />
       <Label fx:id="totLevelLbl" layoutX="239.0" layoutY="44.0" text="(Level)" />
-      <Label layoutX="193.0" layoutY="83.0" text="Level:" />
+      <Label fx:id="classOneDispLvlLbl" layoutX="193.0" layoutY="83.0" text="Level:" />
       <Label fx:id="classOneLvlLbl" layoutX="228.0" layoutY="83.0" text="(level)" />
-      <Label layoutX="583.0" layoutY="83.0" text="Level:" />
+      <Label fx:id="classTwoDispLvlLbl" layoutX="583.0" layoutY="83.0" text="Level:" />
       <Label fx:id="classTwoLvlLbl" layoutX="619.0" layoutY="83.0" text="(level)" />
       <Label fx:id="classThreeLbl" layoutX="902.0" layoutY="83.0" text="(class 3)" />
-      <Label layoutX="849.0" layoutY="108.0" text="Class Features:" />
-      <Label layoutX="849.0" layoutY="326.0" text="Sub Class Features:" />
-      <TextArea fx:id="ClassThreeFtsArea" editable="false" layoutX="963.0" layoutY="116.0" prefHeight="194.0" prefWidth="221.0" />
+      <Label fx:id="ftsThreeDispLbl" layoutX="849.0" layoutY="108.0" text="Class Features:" />
+      <Label fx:id="ftsThreeSubDispLbl" layoutX="849.0" layoutY="326.0" text="Sub Class Features:" />
+      <TextArea fx:id="classThreeFtsArea" editable="false" layoutX="963.0" layoutY="116.0" prefHeight="194.0" prefWidth="221.0" />
       <TextArea fx:id="classThreeSubFtsArea" editable="false" layoutX="963.0" layoutY="329.0" prefHeight="209.0" prefWidth="221.0" />
       <ImageView fx:id="classThreeSubImgVw" fitHeight="150.0" fitWidth="101.0" layoutX="855.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="classThreeImgVw" fitHeight="150.0" fitWidth="101.0" layoutX="854.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="963.0" layoutY="83.0" text="Level:" />
+      <Label fx:id="classThreeDispLvlLbl" layoutX="963.0" layoutY="83.0" text="Level:" />
       <Label fx:id="classThreeLvlLbl" layoutX="1003.0" layoutY="83.0" text="(Level)" />
       <ListView layoutX="41.0" layoutY="605.0" prefHeight="200.0" prefWidth="458.0" />
    </children>

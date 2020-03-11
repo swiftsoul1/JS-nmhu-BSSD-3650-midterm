@@ -9,7 +9,6 @@ public class ClericSubClass extends  Cleric {
     public ClericSubClass(DnDClass cleric){
         super(cleric.GetLevel());
         this.cleric = cleric;
-        SplitDisplayString();
     }
     //endregion
 
@@ -18,6 +17,15 @@ public class ClericSubClass extends  Cleric {
     @Override
     public void SplitDisplayString() {
         cleric.SplitDisplayString();
+    }
+    @Override
+    public String getClassFeatures() {
+        return cleric.getClassFeatures();
+    }
+
+    @Override
+    public String getDispClassFeats() {
+        return cleric.getDispClassFeats();
     }
 
     @Override

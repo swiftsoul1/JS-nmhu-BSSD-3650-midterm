@@ -3,7 +3,7 @@ package DnDpak;
 public class DeathDomain extends ClericSubClass {
 
     private String displaySubClassFeatures;
-    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\death.png";
+    private final String SubImgUrl = "C:\\Users\\Jonah\\Desktop\\Patterns-nmhu\\midterm\\JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\death.png";
     //region constructor
     public DeathDomain(DnDClass cleric) {
         super(cleric);

@@ -3,7 +3,7 @@ package DnDpak;
 public class Necromancy extends WizardSubClass {
 
     private String displaySubClassFeatures;
-    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\necromancy.png";
+    private final String SubImgUrl = "C:\\Users\\Jonah\\Desktop\\Patterns-nmhu\\midterm\\JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\necromancy.png";
     //region constructor
     public Necromancy(DnDClass wiz) {
         //call super

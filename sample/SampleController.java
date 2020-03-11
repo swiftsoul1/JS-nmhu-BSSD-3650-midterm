@@ -1,5 +1,6 @@
 package sample;
 
+import DnDpak.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,13 +24,19 @@ public class SampleController  implements Initializable {
     @FXML public TextField nameTxb;
     @FXML public RadioButton wizRBtn, fighterRBtn, clericRBtn, necroRBtn, evocatRBtn, conjureRBtn,
             champRBtn, samRBtn, niteRBtn, lifeRBtn, deathRBtn, orderRBtn;
-    @FXML public ToggleGroup DnDClassToggle, wizSubGroup, fighterSubGroup, clericSubGroup;
+    @FXML public ToggleGroup DnDClassToggle, WizSubGroup, FighterSubGroup, ClericSubGroup;
     @FXML public Button createBtn;
     //endregion
 
     //region constructor
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        WizSubGroup = new ToggleGroup();
+        necroRBtn.setToggleGroup(WizSubGroup);
+        evocatRBtn.setToggleGroup(WizSubGroup);
+        conjureRBtn.setToggleGroup(WizSubGroup);
+
+
         necroRBtn.setVisible(false);
         evocatRBtn.setVisible(false);
         conjureRBtn.setVisible(false);
@@ -82,12 +89,42 @@ public class SampleController  implements Initializable {
     @FXML
     private void handleCreateButtonAction(ActionEvent event) {
             //Load second scene
+        DataPasser d = DataPasser.getInstance();
+        d.setName(nameTxb.getText());
+
+            if(wizRBtn.isSelected()) {
+                d.setClassName("Wizard");
+                if (necroRBtn.isSelected()) {
+                    d.setSubClassName("Necromancy");
+                } else if (evocatRBtn.isSelected()) {
+                    d.setSubClassName("Evocation");
+                } else if (conjureRBtn.isSelected()) {
+                    d.setSubClassName("Conjuration");
+                }
+            }else if (fighterRBtn.isSelected()) {
+                d.setClassName("Fighter");
+                if (champRBtn.isSelected()) {
+                    d.setSubClassName("Champion");
+                } else if (niteRBtn.isSelected()) {
+                    d.setSubClassName("Knight");
+                } else if (samRBtn.isSelected()) {
+                    d.setSubClassName("Samurai");
+                }
+            }else if (clericRBtn.isSelected()) {
+                d.setClassName("Cleric");
+                if (lifeRBtn.isSelected()) {
+                    d.setSubClassName("Life");
+                } else if (deathRBtn.isSelected()) {
+                    d.setSubClassName("Death");
+                } else if (orderRBtn.isSelected()) {
+                    d.setSubClassName("Order");
+                }
+            }
+
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("characterPage.fxml"));
             Parent root = null;
             root = loader.load();
-            CharacterPageController charPage = loader.getController();
-            charPage.transferCharacterAttributes(nameTxb.getText(), wizRBtn.getText(), necroRBtn.getText());
 
             //Show scene 2 in new window
             Stage stage = new Stage();

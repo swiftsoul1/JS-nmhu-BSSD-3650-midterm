@@ -3,7 +3,7 @@ package DnDpak;
 public class Samurai extends FighterSubClass {
 
     private String displaySubClassFeatures;
-    private final String SubImgUrl = "JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\samurai.png";
+    private final String SubImgUrl = "C:\\Users\\Jonah\\Desktop\\Patterns-nmhu\\midterm\\JS-nmhu-BSSD-3650-midterm\\DnDpak\\Characters\\samurai.png";
 
     //region constructor
     public Samurai(DnDClass fighter) {

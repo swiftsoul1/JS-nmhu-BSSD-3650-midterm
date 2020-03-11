@@ -17,6 +17,7 @@ public interface DnDClass {
 
     //region accessors
     //gets
+    abstract public String getName();
     abstract public int GetLevel();
 
     abstract public String getClassFeatures();
