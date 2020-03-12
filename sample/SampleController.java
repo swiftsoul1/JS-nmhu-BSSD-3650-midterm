@@ -101,6 +101,9 @@ public class SampleController  implements Initializable {
                 } else if (conjureRBtn.isSelected()) {
                     d.setSubClassName("Conjuration");
                 }
+                else {
+                    return;
+                }
             }else if (fighterRBtn.isSelected()) {
                 d.setClassName("Fighter");
                 if (champRBtn.isSelected()) {
@@ -109,6 +112,9 @@ public class SampleController  implements Initializable {
                     d.setSubClassName("Knight");
                 } else if (samRBtn.isSelected()) {
                     d.setSubClassName("Samurai");
+                }
+                else {
+                    return;
                 }
             }else if (clericRBtn.isSelected()) {
                 d.setClassName("Cleric");
@@ -119,6 +125,12 @@ public class SampleController  implements Initializable {
                 } else if (orderRBtn.isSelected()) {
                     d.setSubClassName("Order");
                 }
+                else {
+                    return;
+                }
+            }
+            else{
+                return;
             }
 
         try{

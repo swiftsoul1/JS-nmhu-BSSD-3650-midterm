@@ -7,7 +7,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SampleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="674.0" stylesheets="/sample/sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SampleController">
    <children>
       <Label layoutX="78.0" layoutY="143.0" prefHeight="17.0" prefWidth="181.0" text="Select your starting class" />
       <RadioButton id="wizRBtn" fx:id="wizRBtn" layoutX="93.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleClassTGroup" text="Wizard">

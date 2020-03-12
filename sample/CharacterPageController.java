@@ -33,7 +33,6 @@ public class CharacterPageController implements Initializable {
 
     private DnDCharacter myGuy;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //hide everything at start
@@ -245,7 +244,6 @@ public class CharacterPageController implements Initializable {
     }
     //endregion
 
-
     @FXML void handleClassOneLvlBtn(ActionEvent event){
         myGuy.LevelUp(0);
         outputArea.setText(outputArea.getText() + "You leveled up!" + "\n");
@@ -314,7 +312,7 @@ public class CharacterPageController implements Initializable {
                         myGuy.LevelUp(new Knight(new Fighter()));
                         break;
                     case "Samurai":
-                        myGuy.LevelUp(new Conjuration(new Wizard()));
+                        myGuy.LevelUp(new Samurai(new Fighter()));
                         break;
                 }
                 break;
@@ -338,11 +336,10 @@ public class CharacterPageController implements Initializable {
         UpdateCharacterDisplay();
 
     }
-
-
     @FXML public void handleUseItemBtn(ActionEvent event){
         ObservableList<Integer> index = invListVw.getSelectionModel().getSelectedIndices();
         int i = index.get(0);
         outputArea.setText(outputArea.getText() + myGuy.UseItem(i) + "\n");
     }
+
 }
